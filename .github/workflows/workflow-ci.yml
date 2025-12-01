@@ -9,19 +9,18 @@ on:
 
 jobs:
   build:
-   
     runs-on: ubuntu-latest
-    
-    
-    
-    
+
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 22.
-  
-    - run: npm install
-   
-    - run: npm test
+      - uses: actions/checkout@v4
+
+      - name: Usar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar testes
+        run: npm test
